@@ -11,7 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        header {
+        header, footer {
             background-color: #333;
             color: white;
             padding: 10px 0;
@@ -65,6 +65,40 @@
         .form-container form input[type="submit"]:hover {
             background-color: #555;
         }
+        .submenu {
+            margin: 10px 0;
+        }
+        .submenu a {
+            margin-right: 10px;
+        }
+        .dashboard {
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .dashboard .sidebar a {
+            color: white;
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .dashboard .sidebar a:hover {
+            background-color: #555;
+        }
+        .previsualizacion {
+            background-color: #e2e2e2;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -72,105 +106,217 @@
         <h1>Co-Docente</h1>
         <nav>
             <ul>
-                <li><a href="#planificacion">Planificación</a></li>
-                <li><a href="#evaluacion">Evaluación</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#caracterizacion">Caracterización</a></li>
-                <li><a href="#reflexion">Reflexión Pedagógica</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Registro</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Funcionalidades</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
+    
     <div class="container">
-        <!-- Planificación -->
+        <!-- Página de Inicio -->
+        <section id="inicio">
+            <h2>Bienvenido a Co-Docente</h2>
+            <p>Una plataforma integral para la planificación, evaluación y creación de recursos educativos.</p>
+            <a href="#" class="cta">Registrarse</a>
+            <a href="#" class="cta">Iniciar Sesión</a>
+        </section>
+        
+        <!-- Formulario de Registro -->
+        <section id="registro" class="form-container">
+            <h2>Registro</h2>
+            <form>
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <input type="password" name="confirmar_contraseña" placeholder="Confirmar Contraseña" required>
+                <input type="text" name="asignatura" placeholder="Asignatura(s) que Enseña">
+                <input type="text" name="nivel_educativo" placeholder="Nivel Educativo">
+                <input type="number" name="años_experiencia" placeholder="Años de Experiencia">
+                <input type="submit" value="Registrarse">
+            </form>
+        </section>
+        
+        <!-- Formulario de Login -->
+        <section id="login" class="form-container">
+            <h2>Login</h2>
+            <form>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </section>
+        
+        <!-- Dashboard Principal -->
+        <div class="dashboard">
+            <div class="sidebar">
+                <h3>Menú</h3>
+                <a href="#">Planificación de Clases</a>
+                <a href="#">Evaluaciones</a>
+                <a href="#">Recursos Pedagógicos</a>
+                <a href="#">Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="#">Reportes y Análisis</a>
+            </div>
+            <div class="main-content">
+                <h2>Panel de Control</h2>
+                <p>Resumen de actividades</p>
+                <p>Notificaciones</p>
+                <div>
+                    <h3>Gráficos y Estadísticas</h3>
+                    <!-- Aquí se incluirán los gráficos y estadísticas -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Planificación de Clases -->
         <section id="planificacion" class="form-container">
-            <h2>Planificación</h2>
+            <h2>Planificación de Clases</h2>
             <form>
-                <!-- Formulario de planificación -->
-                <input type="text" placeholder="Título de la planificación">
-                <textarea placeholder="Descripción de la planificación"></textarea>
+                <input type="text" name="nivel" placeholder="Nivel" required>
+                <input type="text" name="unidad" placeholder="Unidad (Opcional)">
+                <input type="text" name="objetivos" placeholder="Objetivos de Aprendizaje" required>
+                <input type="text" name="indicador" placeholder="Indicador de Evaluación" required>
+                <textarea name="contenido" placeholder="Contenido de la Clase" required></textarea>
+                <textarea name="metodologia" placeholder="Metodología" required></textarea>
+                <textarea name="recursos" placeholder="Recursos Didácticos" required></textarea>
+                <input type="text" name="duracion" placeholder="Duración de la Clase" required>
+                <textarea name="evaluacion" placeholder="Evaluación" required></textarea>
                 <input type="submit" value="Guardar">
             </form>
-            <div id="preview-planificacion">
-                <!-- Previsualización de planificación -->
-            </div>
-            <button onclick="exportPlanificacion()">Exportar</button>
         </section>
-
-        <!-- Evaluación -->
-        <section id="evaluacion" class="form-container">
-            <h2>Evaluación</h2>
+        
+        <!-- Creación de Evaluaciones -->
+        <section id="evaluaciones" class="form-container">
+            <h2>Creación de Evaluaciones</h2>
             <form>
-                <!-- Formulario de evaluación -->
-                <input type="text" placeholder="Título de la evaluación">
-                <textarea placeholder="Descripción de la evaluación"></textarea>
+                <input type="text" name="nivel" placeholder="Nivel" required>
+                <input type="text" name="unidad" placeholder="Unidad (Opcional)">
+                <input type="text" name="objetivos" placeholder="Objetivos de Aprendizaje" required>
+                <input type="text" name="indicador" placeholder="Indicador de Evaluación" required>
+                <select name="tipo_evaluacion" required>
+                    <option value="">Tipo de Evaluación</option>
+                    <option value="diagnostica">Diagnóstica</option>
+                    <option value="formativa">Formativa</option>
+                    <option value="sumativa">Sumativa</option>
+                </select>
+                <textarea name="criterios" placeholder="Criterios de Evaluación" required></textarea>
+                <input type="number" name="numero_preguntas" placeholder="Número de Preguntas" required>
+                <select name="formato_preguntas" required>
+                    <option value="">Formato de las Preguntas</option>
+                    <option value="multiple_choice">Multiple Choice</option>
+                    <option value="verdadero_falso">Verdadero/Falso</option>
+                    <option value="desarrollo">Desarrollo</option>
+                </select>
+                <textarea name="instrucciones" placeholder="Instrucciones para los Estudiantes" required></textarea>
                 <input type="submit" value="Guardar">
             </form>
-            <div id="preview-evaluacion">
-                <!-- Previsualización de evaluación -->
-            </div>
-            <button onclick="exportEvaluacion()">Exportar</button>
         </section>
-
-        <!-- Recursos -->
+        
+        <!-- Creación de Recursos Pedagógicos -->
         <section id="recursos" class="form-container">
-            <h2>Recursos</h2>
-            <button onclick="buscarRecursos()">Buscar Recursos</button>
-            <button onclick="agregarRecurso()">Agregar Recurso</button>
+            <h2>Creación de Recursos Pedagógicos</h2>
+            <form>
+                <input type="text" name="nivel" placeholder="Nivel" required>
+                <input type="text" name="unidad" placeholder="Unidad (Opcional)">
+                <input type="text" name="objetivos" placeholder="Objetivos de Aprendizaje" required>
+                <input type="text" name="indicador" placeholder="Indicador de Evaluación" required>
+                <select name="tipo_recurso" required>
+                    <option value="">Tipo de Recurso</option>
+                    <option value="lectura">Lectura</option>
+                    <option value="video">Video</option>
+                    <option value="actividad">Actividad</option>
+                    <option value="juego">Juego</option>
+                </select>
+                <input type="text" name="tema" placeholder="Tema del Recurso" required>
+                <textarea name="descripcion" placeholder="Descripción del Contenido" required></textarea>
+                <select name="formato" required>
+                    <option value="">Formato del Recurso</option>
+                    <option value="digital">Digital</option>
+                    <option value="impreso">Impreso</option>
+                </select>
+                <input type="text" name="publico" placeholder="Público Objetivo" required>
+                <input type="submit" value="Guardar">
+            </form>
         </section>
-
-        <!-- Caracterización -->
-        <section id="caracterizacion" class="form-container">
-            <h2>Caracterización</h2>
-            <nav>
-                <ul>
-                    <li><a href="#crear-caracterizacion">Crear</a></li>
-                    <li><a href="#editar-caracterizacion">Editar</a></li>
-                    <li><a href="#exportar-caracterizacion">Exportar</a></li>
-                </ul>
-            </nav>
-            <div id="resultados-evaluacion">
-                <!-- Resultados de evaluación (curso/individual) -->
+        
+        <!-- Reportes y Análisis -->
+        <section id="reportes" class="form-container">
+            <h2>Reportes y Análisis</h2>
+            <form>
+                <select name="tipo_reporte" required>
+                    <option value="">Seleccione el Tipo de Reporte</option>
+                    <option value="progreso_estudiantes">Progreso de los Estudiantes</option>
+                    <option value="evaluaciones_realizadas">Evaluaciones Realizadas</option>
+                    <option value="uso_recursos">Uso de Recursos</option>
+                </select>
+                <input type="submit" value="Generar Reporte">
+            </form>
+            <div>
+                <h3>Visualización de Datos</h3>
+                <!-- Aquí se incluirán gráficos y tablas -->
             </div>
         </section>
 
-        <!-- Reflexión Pedagógica -->
+        <!-- Reutilización de Recursos -->
+        <section id="reutilizacion" class="form-container">
+            <h2>Reutilización de Recursos</h2>
+            <p>Implementar una opción que permita a los usuarios reutilizar recursos previamente creados en la plataforma dentro de los módulos de planificación, evaluación y creación de recursos.</p>
+        </section>
+        
+        <!-- Previsualización y Exportación -->
+        <section id="previsualizacion" class="form-container">
+            <h2>Previsualización y Exportación</h2>
+            <p>Generar una pantalla de previsualización paralela al formulario correspondiente en cada módulo.</p>
+            <button type="button">Exportar</button>
+        </section>
+        
+        <!-- Búsqueda y Adición de Recursos de la Comunidad -->
+        <section id="busqueda" class="form-container">
+            <h2>Búsqueda y Adición de Recursos de la Comunidad</h2>
+            <p>Agregar una funcionalidad que permita a los usuarios buscar y añadir recursos disponibles en la comunidad Co-Docente.</p>
+        </section>
+        
+        <!-- Resultados de Evaluaciones en el Módulo de Caracterización -->
+        <section id="resultados" class="form-container">
+            <h2>Resultados de Evaluaciones en el Módulo de Caracterización</h2>
+            <p>Incorporar la información de resultados de evaluaciones (tanto a nivel de curso como individual) en el módulo de caracterización.</p>
+        </section>
+        
+        <!-- Módulo de Caracterización -->
+        <section id="caracterizacion" class="form-container">
+            <h2>Módulo de Caracterización</h2>
+            <div class="submenu">
+                <a href="#">Crear Caracterizaciones</a>
+                <a href="#">Editar Caracterizaciones</a>
+                <a href="#">Exportar Caracterizaciones</a>
+            </div>
+        </section>
+        
+        <!-- Módulo de Evaluación -->
+        <section id="modulo_evaluacion" class="form-container">
+            <h2>Módulo de Evaluación</h2>
+            <div class="submenu">
+                <a href="#">Crear Evaluaciones</a>
+                <a href="#">Revisar Resultados</a>
+                <a href="#">Analizar Resultados</a>
+            </div>
+        </section>
+        
+        <!-- Módulo de Reflexión Pedagógica -->
         <section id="reflexion" class="form-container">
-            <h2>Reflexión Pedagógica</h2>
-            <form>
-                <!-- Formulario de reflexión pedagógica -->
-                <input type="text" placeholder="Tema de reflexión">
-                <textarea placeholder="Descripción de la reflexión"></textarea>
-                <input type="submit" value="Guardar">
-            </form>
-            <button onclick="buscarReflexiones()">Buscar Reflexiones</button>
+            <h2>Módulo de Reflexión Pedagógica</h2>
+            <p>Crear un módulo de reflexión pedagógica donde los usuarios puedan buscar recursos creados en la plataforma y realizar un proceso de reflexión pedagógica utilizando estos recursos.</p>
         </section>
     </div>
-
-    <script>
-        function exportPlanificacion() {
-            // Lógica para exportar planificación
-            alert('Planificación exportada');
-        }
-
-        function exportEvaluacion() {
-            // Lógica para exportar evaluación
-            alert('Evaluación exportada');
-        }
-
-        function buscarRecursos() {
-            // Lógica para buscar recursos en la comunidad Co-Docente
-            alert('Buscando recursos');
-        }
-
-        function agregarRecurso() {
-            // Lógica para agregar un nuevo recurso
-            alert('Recurso agregado');
-        }
-
-        function buscarReflexiones() {
-            // Lógica para buscar reflexiones pedagógicas
-            alert('Buscando reflexiones');
-        }
-    </script>
+    
+    <footer>
+        <p>&copy; 2024 Co-Docente. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
+
+                <
+
