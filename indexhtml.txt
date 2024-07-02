@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Docente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .cta {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+        }
+        .form-container {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+        .form-container h2 {
+            margin-top: 0;
+        }
+        .form-container form input, .form-container form select, .form-container form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .main, .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .main .panel {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .report-section {
+            margin-bottom: 20px;
+        }
+        .report-section button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Co-Docente</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#planificacion">Planificación de Clases</a></li>
+                <li><a href="#evaluaciones">Evaluaciones</a></li>
+                <li><a href="#recursos">Recursos Pedagógicos</a></li>
+                <li><a href="#reportes">Reportes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="inicio">
+        <h2>Bienvenido a Co-Docente</h2>
+        <p>Una plataforma diseñada para facilitar la planificación, evaluación y generación de recursos pedagógicos para los docentes chilenos.</p>
+        <a class="cta" href="#registro">Registrarse</a>
+        <a class="cta" href="#login">Iniciar Sesión</a>
+    </div>
+
+    <div class="form-container" id="registro">
+        <h2>Registro</h2>
+        <form>
+            <input type="text" placeholder="Nombre Completo" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="password" placeholder="Confirmar Contraseña" required>
+            <input type="text" placeholder="Asignatura(s) que Enseña" required>
+            <input type="text" placeholder="Nivel Educativo" required>
+            <input type="number" placeholder="Años de Experiencia" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <div class="form-container" id="login">
+        <h2>Login</h2>
+        <form>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <div class="main" id="dashboard">
+        <div class="panel">
+            <h2>Resumen de Actividades</h2>
+            <p>Aquí encontrarás un resumen de tus actividades recientes.</p>
+        </div>
+        <div class="panel">
+            <h2>Notificaciones</h2>
+            <p>No tienes nuevas notificaciones.</p>
+        </div>
+    </div>
+
+    <div class="container" id="planificacion">
+        <h2>Planificación de Clases</h2>
+        <form>
+            <select>
+                <option>Nivel</option>
+                <option>Primaria</option>
+                <option>Secundaria</option>
+            </select>
+            <input type="text" placeholder="Unidad (Opcional)">
+            <input type="text" placeholder="Objetivos de Aprendizaje" required>
+            <input type="text" placeholder="Indicador de Evaluación" required>
+            <textarea placeholder="Contenido de la Clase" required></textarea>
+            <textarea placeholder="Metodología" required></textarea>
+            <input type="text" placeholder="Recursos Didácticos" required>
+            <input type="text" placeholder="Duración de la Clase" required>
+            <textarea placeholder="Evaluación" required></textarea>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <div class="container" id="evaluaciones">
+        <h2>Creación de Evaluaciones</h2>
+        <form>
+            <select>
+                <option>Nivel</option>
+                <option>Primaria</option>
+                <option>Secundaria</option>
+            </select>
+            <input type="text" placeholder="Unidad (Opcional)">
+            <input type="text" placeholder="Objetivos de Aprendizaje" required>
+            <input type="text" placeholder="Indicador de Evaluación" required>
+            <select>
+                <option>Tipo de Evaluación</option>
+                <option>Examen</option>
+                <option>Trabajo</option>
+                <option>Proyecto</option>
+            </select>
+            <input type="text" placeholder="Criterios de Evaluación" required>
+            <input type="number" placeholder="Número de Preguntas" required>
+            <select>
+                <option>Formato de las Preguntas</option>
+                <option>Opción Múltiple</option>
+                <option>Respuesta Corta</option>
+                <option>Ensayo</option>
+            </select>
+            <textarea placeholder="Instrucciones para los Estudiantes" required></textarea>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <div class="container" id="recursos">
+        <h2>Creación de Recursos Pedagógicos</h2>
+        <form>
+            <select>
+                <option>Nivel</option>
+                <option>Primaria</option>
+                <option>Secundaria</option>
+            </select>
+            <input type="text" placeholder="Unidad (Opcional)">
+            <input type="text" placeholder="Objetivos de Aprendizaje" required>
+            <input type="text" placeholder="Indicador de Evaluación" required>
+            <select>
+                <option>Tipo de Recurso</option>
+                <option>Guía</option>
+                <option>Video</option>
+                <option>Presentación</option>
+            </select>
+            <input type="text" placeholder="Tema del Recurso" required>
+            <textarea placeholder="Descripción del Contenido" required></textarea>
+            <select>
+                <option>Formato del Recurso</option>
+                <option>Documento</option>
+                <option>PDF</option>
+                <option>Presentación</option>
+            </select>
+            <input type="text" placeholder="Público Objetivo" required>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <div class="container" id="reportes">
+        <h2>Reportes y Análisis</h2>
+        <div class="report-section">
+            <h3>Progreso de los Estudiantes</h3>
+            <p>Aquí puedes generar reportes sobre el progreso de tus estudiantes.</p>
+            <button>Generar Reporte</button>
+        </
